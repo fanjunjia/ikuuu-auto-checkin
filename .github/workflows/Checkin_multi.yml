@@ -1,0 +1,87 @@
+name: IKUUU-Auto-Checkin_multi
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 16 * * *"
+
+jobs:
+  checkin1:
+    runs-on: ubuntu-latest
+    environment: IKUUU
+    env:
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWD: ${{ secrets.PASSWD }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Checkin
+        shell: bash
+        run: |
+          node main.js
+          
+  checkin2:
+    runs-on: ubuntu-latest
+    environment: IKUUU
+    env:
+      EMAIL: ${{ secrets.EMAIL2 }}
+      PASSWD: ${{ secrets.PASSWD }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Checkin
+        shell: bash
+        run: |
+          node main.js
+          
+  checkin3:
+    runs-on: ubuntu-latest
+    environment: IKUUU
+    env:
+      EMAIL: ${{ secrets.EMAIL3 }}
+      PASSWD: ${{ secrets.PASSWD }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Checkin
+        shell: bash
+        run: |
+          node main.js
+          
+  checkin4:
+    runs-on: ubuntu-latest
+    environment: IKUUU
+    env:
+      EMAIL: ${{ secrets.EMAIL4 }}
+      PASSWD: ${{ secrets.PASSWD }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Checkin
+        shell: bash
+        run: |
+          node main.js
